@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { findProduct } from "@/app/lib/pricing";
-// import OrderForm from "@/app/components/OrderForm";
+import OrderForm from "@/app/components/OrderForm";
 
 // URL の [slug] 部分が params.slug に入る（/products/goma → "goma"）
 export default async function ProductPage({
@@ -16,7 +16,7 @@ export default async function ProductPage({
     <>
       <h1>{product.name}</h1>
       <p>税抜 {product.price.toLocaleString()} 円</p>
-      {/* <OrderForm slug={product.slug} /> */}
+      <OrderForm slug={product.slug} />
     </>
   );
 }
